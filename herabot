@@ -1,0 +1,22 @@
+import com.qualcomm.robotcore.hardware.ColorSensor;
+import com.qualcomm.robotcore.hardware.DcMotor;
+import com.qualcomm.robotcore.hardware.HardwareMap;
+import com.qualcomm.robotcore.hardware.Servo;
+import com.qualcomm.robotcore.util.ElapsedTime;
+
+public class herabot{
+    public ElapsedTime runtime = new ElapsedTime();
+// variables
+        DcMotor em;
+    HardwareMap hwMap = null;
+    public herabot() {
+    }
+    public void init(HardwareMap ahwMap){
+        hwMap = ahwMap;
+//code
+        em = hwMap.dcMotor.get("em");
+        em.setMode(DcMotor.RunMode.RUN_USING_ENCODER);
+        em.setDirection(DcMotor.Direction.REVERSE);
+
+    }
+}
